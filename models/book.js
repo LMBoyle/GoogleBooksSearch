@@ -1,5 +1,9 @@
+// Dependencies ===================================================================================
+
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
+
+// Schema =========================================================================================
 
 const bookSchema = new Schema({
   title: { type: String, required: true },
@@ -9,5 +13,7 @@ const bookSchema = new Schema({
 });
 
 const Book = mongoose.model("Book", bookSchema);
+
+// Export =========================================================================================
 
 module.exports = Book;

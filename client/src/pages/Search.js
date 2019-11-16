@@ -1,13 +1,17 @@
 // Imports ========================================================================================
 
 import React, { Component } from "react";
-import API from "../utils/API";
 // import { Link } from "react-router-dom";
+
+// Components
 import { Row, Container } from "../components/Grid";
 import { Input, FormBtn } from "../components/Form";
 import Jumbotron from "../components/Jumbotron"
 import BookWrapper from "../components/BookWrapper"
 import Results from "../components/Results"
+
+// Other
+import API from "../utils/API";
 
 // Functions ======================================================================================
 

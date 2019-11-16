@@ -1,7 +1,19 @@
+// Imports ========================================================================================
+
 import axios from "axios";
 
+// Export =========================================================================================
+
 export default {
-  // Gets all books
+  // Send request to google books to find searched book
+  searchBooks: function(req, res) {
+    console.log("API.js, running and sending axios")
+    const googleURL = "https://www.googleapis.com/books/v1/volumes?"
+
+    return axios.get(googleURL, { params: { q: req } })
+  },
+  
+  // Send request to db for saved books
   getBooks: function() {
     return axios.get("/api/books");
   },

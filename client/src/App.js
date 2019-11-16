@@ -11,6 +11,7 @@ import NoMatch from "./pages/NoMatch";
 
 // Components
 import Nav from "./components/Nav";
+import Wrapper from "./components/Wrapper"
 
 // Functions ======================================================================================
 
@@ -19,13 +20,15 @@ function App() {
     <Router>
       <div>
         <Nav />
-        <Switch>
-          <Route exact path="/" component={Search} />
-          <Route exact path="/search" component={Search} />
-          <Route exact path="/books" component={Books} />
-          <Route exact path="/books/:id" component={Detail} />
-          <Route component={NoMatch} />
-        </Switch>
+        <Wrapper >
+          <Switch>
+            <Route exact path="/" component={Search} />
+            <Route exact path="/search" component={Search} />
+            <Route exact path="/books" component={Books} />
+            <Route exact path="/books/:id" component={Detail} />
+            <Route component={NoMatch} />
+          </Switch>
+        </Wrapper>
       </div>
     </Router>
   );

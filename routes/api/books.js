@@ -1,5 +1,9 @@
+// Dependencies ===================================================================================
+
 const router = require("express").Router();
 const booksController = require("../../controllers/booksController");
+
+// Routes =========================================================================================
 
 // Matches with "/api/books"
 router
@@ -13,5 +17,7 @@ router
   .get(booksController.findById)
   .put(booksController.update)
   .delete(booksController.remove);
+
+// Export =========================================================================================
 
 module.exports = router;
