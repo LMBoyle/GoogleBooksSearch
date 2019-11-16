@@ -6,7 +6,6 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 // Pages
 import Books from "./pages/Books";
 import Search from "./pages/Search";
-import Detail from "./pages/Detail";
 import NoMatch from "./pages/NoMatch";
 
 // Components
@@ -26,7 +25,6 @@ function App() {
             <Route exact path="/search" component={Search} />
             <Route exact path="/book" component={Books} />
             <Route exact path="/books" component={Books} />
-            <Route exact path="/books/:id" component={Detail} />
             <Route component={NoMatch} />
           </Switch>
         </Wrapper>

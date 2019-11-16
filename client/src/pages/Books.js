@@ -1,16 +1,10 @@
 // Imports ========================================================================================
 
 import React, { Component } from "react";
-// import DeleteBtn from "../components/DeleteBtn";
-// import Jumbotron from "../components/Jumbotron";
-
-// import { Link } from "react-router-dom";
-// import { Col, Row, Container } from "../components/Grid";
-// import { List, ListItem } from "../components/List";
-// import { Input, TextArea, FormBtn } from "../components/Form";
 
 // Components
 import BookStack from "../components/BookStack"
+import DeleteBtn from "../components/DeleteBtn";
 
 // Other
 import API from "../utils/API";
@@ -41,7 +35,7 @@ class Books extends Component {
 
   // Select a random number
   randomColor() {
-    const color = ["red", "orange", "yellow", "green", "blue"];
+    const color = ["#CBA00F", "#E5901E", "#DF5F07", "#5AB4EB", "#BBCD56"];
 
     let num = Math.floor(Math.random() * Math.floor(color.length));
 
@@ -57,32 +51,41 @@ class Books extends Component {
     return(num)
   }
 
+  handleDelete = id => {
+      API.deleteBook(id)
+        .then(res => this.loadBooks())
+        .catch(err => console.log(err));
+    }
+
   // Render page
   render() {
-    console.log(this.state)
+    console.log("books ", this.state.books)
     return (
       <BookStack>
         <h1> Saved Book Stack </h1>
       
         {this.state.books.length ? (
           <>
-            {this.state.books.map(book => (
+            {this.state.books.map((book, i) => (
               <div
                 style={{
                   backgroundColor: `${this.randomColor()}`,
                   marginLeft: `${this.randomMargin()}`
                 }}
                 className="book"
+                key={i}
               >
+                <DeleteBtn 
+                  onClick={() => this.handleDelete(book._id)}
+                />
                 <p className="bookTitle"> {book.title} </p>
                 <p> By </p>
                 <p className="bookAuthor"> {book.author} </p>
               </div>
-              // <DeleteBtn onClick={() => this.deleteBook(book._id)} />
             ))}
           </>
           ) : (
-            <h3> No Results to Display </h3>
+            <h1> No Results to Display </h1>
           )}
       </BookStack>
     );

@@ -6,7 +6,8 @@
   border: 1px solid rgb(100, 100, 100);
   border-radius: 10px;
   line-height: 7px;
-  padding: 2% 0;
+  padding: 2.3% 0;
+  position: relative;
 }
 
 .stack {
