@@ -1,12 +1,18 @@
+// Imports ========================================================================================
+
 import React from "react";
 import "./style.css";
 
-function BookWrapper() {
-  return (
-    <div class="booksWrapper">
+// Functions ======================================================================================
 
+function BookWrapper(props) {
+  return (
+    <div class="booksWrapper row">
+      {props.children}
     </div>
   );
 }
+
+// Export =========================================================================================
 
 export default BookWrapper;

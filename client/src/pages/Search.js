@@ -54,23 +54,24 @@ class Search extends Component {
         <Row>
           <Jumbotron>
             <h1> What Book Are You Looking For? </h1>
-          </Jumbotron>
 
-          <form>
-            <Input
-              name="searchTerm"
-              placeholder="Search For A Book" 
-              value={this.state.searchTerm}
-              onChange={this.inputChange}
-            />
+            <form>
+              <Input
+                name="searchTerm"
+                placeholder="Search For A Book" 
+                value={this.state.searchTerm}
+                onChange={this.inputChange}
+                style={{width:"50%", margin:"0 auto"}}
+              />
 
-            <FormBtn
-              disabled={!(this.state.searchTerm)}
-              onClick={this.handleSearch}
-            >
-              Submit
-            </FormBtn>
-          </form>
+              <FormBtn
+                disabled={!(this.state.searchTerm)}
+                onClick={this.handleSearch}
+              >
+                Submit
+              </FormBtn>
+            </form>
+        </Jumbotron>
         </Row>
 
         <Row>
