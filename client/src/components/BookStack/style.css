@@ -1,7 +1,23 @@
 .book {
-  height: 50px;
+  height: 115px;
+  width: 50%;
   margin: 0 auto;
   text-align: center;
   border: 1px solid rgb(100, 100, 100);
   border-radius: 10px;
+  line-height: 7px;
+  padding: 2% 0;
+}
+
+.stack {
+  width: 100%;
+}
+
+p {
+  padding: 0;
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 15px;
 }

@@ -3,7 +3,7 @@
 import React, { Component } from "react";
 // import DeleteBtn from "../components/DeleteBtn";
 // import Jumbotron from "../components/Jumbotron";
-// import API from "../utils/API";
+
 // import { Link } from "react-router-dom";
 // import { Col, Row, Container } from "../components/Grid";
 // import { List, ListItem } from "../components/List";
@@ -13,14 +13,31 @@ import React, { Component } from "react";
 import BookStack from "../components/BookStack"
 
 // Other
+import API from "../utils/API";
 
 // Functions ======================================================================================
 
 class Books extends Component {
-  
+
   state = {
-    
+    books: [],
+    title: "",
+    author: "",
+    synopsis: ""
+  };
+
+  componentDidMount() {
+    this.loadBooks();
   }
+
+  loadBooks = () => {
+    API.getBooks()
+      .then(res =>
+        this.setState({ books: res.data, title: "", author: "", synopsis: "" })
+      )
+      .catch(err => console.log(err));
+  };
+
 
   // Select a random number
   randomColor() {
@@ -32,65 +49,41 @@ class Books extends Component {
   }
 
   // Select a random width
-  randomWidth() {
-    // Find a number between 60 & 100 
-    // Then add % to the end to make it a percent
-    let num = Math.floor(Math.random() * 60) + 40 + '%';
-
-    return(num)
-  }
-
-  // Select a random width
   randomMargin() {
-    // Find a number between -30 & 30 
+    // Find a number between 15 & 30
     // Then add % to the end to make it a percent
-    let num = Math.floor(Math.random() * 60) - 30 + '%';
+    let num = Math.floor(Math.random() * (30 - 15)) + 15 + '%';
 
     return(num)
   }
 
   // Render page
   render() {
+    console.log(this.state)
     return (
       <BookStack>
-        <h1> Your Book Stack </h1>
+        <h1> Saved Book Stack </h1>
       
-        <div 
-          style={{
-            backgroundColor: `${this.randomColor()}`,
-            width: `${this.randomWidth()}`,
-            marginLeft: `${this.randomMargin()}`
-          }}
-          className="book"
-        > Book One </div>
-
-        <div 
-          style={{
-            backgroundColor: `${this.randomColor()}`,
-            width: `${this.randomWidth()}`,
-            marginLeft: `${this.randomMargin()}`
-          }}
-          className="book"
-        > Book Two </div>
-
-        <div 
-          style={{
-            backgroundColor: `${this.randomColor()}`,
-            width: `${this.randomWidth()}`,
-            marginLeft: `${this.randomMargin()}`
-          }}
-          className="book"
-        > Book Three </div>
-
-        <div 
-          style={{
-            backgroundColor: `${this.randomColor()}`,
-            width: `${this.randomWidth()}`,
-            marginLeft: `${this.randomMargin()}`
-          }}
-          className="book"
-        > Book Four </div>
-
+        {this.state.books.length ? (
+          <>
+            {this.state.books.map(book => (
+              <div
+                style={{
+                  backgroundColor: `${this.randomColor()}`,
+                  marginLeft: `${this.randomMargin()}`
+                }}
+                className="book"
+              >
+                <p className="bookTitle"> {book.title} </p>
+                <p> By </p>
+                <p className="bookAuthor"> {book.author} </p>
+              </div>
+              // <DeleteBtn onClick={() => this.deleteBook(book._id)} />
+            ))}
+          </>
+          ) : (
+            <h3> No Results to Display </h3>
+          )}
       </BookStack>
     );
   };

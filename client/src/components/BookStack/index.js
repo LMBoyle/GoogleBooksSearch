@@ -7,7 +7,9 @@ import "./style.css";
 
 function BookStack({ children }) {
   return (
-    <div className="stack">{children}</div>
+    <div className="stack">
+      {children}
+    </div>
   );
 }
 
