@@ -4,16 +4,14 @@ import React from "react";
 
 // Functions ======================================================================================
 
-function Nav() {
+function Input(props) {
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
-      <a className="navbar-brand" href="/">
-        Google Books Search
-      </a>
-    </nav>
+    <div className="input-group input-group-lg">
+      <input className="form-control" type="text" {...props} />
+    </div>
   );
 }
 
 // Export =========================================================================================
 
-export default Nav;
+export default Input;

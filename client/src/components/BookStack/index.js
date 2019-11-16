@@ -1,19 +1,16 @@
 // Imports ========================================================================================
 
 import React from "react";
+import "./style.css";
 
 // Functions ======================================================================================
 
-function Nav() {
+function BookStack({ children }) {
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
-      <a className="navbar-brand" href="/">
-        Google Books Search
-      </a>
-    </nav>
+    <div className="stack">{children}</div>
   );
 }
 
 // Export =========================================================================================
 
-export default Nav;
+export default BookStack
