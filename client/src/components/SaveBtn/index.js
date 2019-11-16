@@ -24,7 +24,8 @@ function SaveBtn(props) {
     return (
       <button 
         onClick={() => saveBook(props.title, props.author, props.synopsis)} 
-      > Save Book </button>
+        className="btn btn-success"
+      > <i class="fas fa-bookmark"></i> </button>
     );
   }
 

@@ -7,7 +7,7 @@ import "./style.css";
 
 function BookWrapper(props) {
   return (
-    <div class="booksWrapper row">
+    <div className="booksWrapper row">
       {props.children}
     </div>
   );

@@ -3,8 +3,7 @@
 import React from "react";
 import "./style.css";
 
-// import SumBtn from "../SumBtn/SumBtn"
-// import SaveBtn from "../SaveBtn";
+import SaveBtn from "../SaveBtn";
 
 
 // Functions ======================================================================================
@@ -23,13 +22,12 @@ function Results(props) {
           </div>
         </div>
 
-        <div class="card-footer text-muted">
-          2 days ago
-          {/* <SaveBtn 
+        <div class="card-footer text-muted text-center">
+          <SaveBtn 
             title={props.title}
             author={props.author}
             synopsis={props.synopsis}
-          /> */}
+          />
         </div>
 
       </div>
