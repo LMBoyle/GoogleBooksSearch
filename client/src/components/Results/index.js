@@ -12,28 +12,26 @@ import "./style.css";
 function Results(props) {
   return (
       <div className="col-sm-4">
+        <h5 className="card-header text-center"> {props.title} </h5>
+
         <div className="card text-center">
-          <h5 className="card-header"> {props.title} </h5>
-          <div className="row no-gutters">
-
-            <div className="col">
-              <img src={props.img} className="card-img-top" alt="placeholder" />
+          <div className="no-gutters">
+            <div className="card-body">
+              <img src={props.img} className="card-img-top float-left" alt="placeholder" />
+              <p className="card-text"> {props.synopsis} </p>
             </div>
-
-            <div className="col">
-              <div className="card-body">
-                <p className="card-text"> Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                {/* <SumBtn> View Summary </SumBtn> */}
-                {/* <SaveBtn 
-                  title={props.title}
-                  author={props.author}
-                  synopsis={props.synopsis}
-                /> */}
-              </div>
-            </div>
-
           </div>
         </div>
+
+        <div class="card-footer text-muted">
+          2 days ago
+          {/* <SaveBtn 
+            title={props.title}
+            author={props.author}
+            synopsis={props.synopsis}
+          /> */}
+        </div>
+
       </div>
   );
 }

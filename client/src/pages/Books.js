@@ -52,7 +52,6 @@ class Books extends Component {
   // Render page
   render() {
     return (
-      <>
       <BookStack>
         <h1> Your Book Stack </h1>
       
@@ -93,7 +92,6 @@ class Books extends Component {
         > Book Four </div>
 
       </BookStack>
-      </>
     );
   };
 }

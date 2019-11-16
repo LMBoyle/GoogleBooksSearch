@@ -1,6 +1,13 @@
+// Imports ========================================================================================
+
 import React from "react";
+
+// Components
 import { Col, Row, Container } from "../components/Grid";
 import Jumbotron from "../components/Jumbotron";
+
+
+// Functions ======================================================================================
 
 function NoMatch() {
   return (
@@ -20,5 +27,7 @@ function NoMatch() {
     </Container>
   );
 }
+
+// Export =========================================================================================
 
 export default NoMatch;
