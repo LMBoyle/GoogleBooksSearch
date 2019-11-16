@@ -12,3 +12,6 @@ function DeleteBtn(props) {
 }
 
 export default DeleteBtn;
+
+
+{/* <button type="submit" onClick={this.handleSearch} className="btn btn-primary"> Submit </button> */}
