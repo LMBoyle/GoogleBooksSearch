@@ -13,7 +13,10 @@ function saveBook(title, author, synopsis) {
         author: author,
         synopsis: synopsis
       })
-        .then(() => console.log("added book"))
+        .then(data => {
+          console.log("added book");
+          console.log(data)
+        })
         .catch(err => console.log(err));
     }
   };

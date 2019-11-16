@@ -25,17 +25,18 @@
 }
 
 .card-body {
-  padding: 0;
+  padding: 10px;
 }
 
 .card img {
   width: 158px;
   height: 272px;
-  margin-right: 11px;
+  margin: -10px 11px 0 -11px;
   border-radius: 0;
 }
 
 .card-text {
   overflow: auto;
   display: inline;
+  padding: 15px;
 }
